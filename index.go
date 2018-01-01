@@ -5,6 +5,7 @@ import (
 	"github.com/go-crazy/elastic/Routers"
 )
 
+
 func InitElastic(router *Gin.RouterGroup) {
 
 		router.POST("/set", Routers.SetHandler)
@@ -17,7 +18,7 @@ func InitElastic(router *Gin.RouterGroup) {
 	    router.POST("/map", Routers.MappingHandler)
 }
 
-func TestElastic()  {
+func main()  {
 	engine := Gin.Default()
 	wsElastic := engine.Group("test-elastic")
 	InitElastic(wsElastic)
